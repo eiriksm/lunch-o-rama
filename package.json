@@ -1,0 +1,16 @@
+{
+  "name": "lunch-o-rama",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "eirik@nymedia.no",
+  "license": "BSD",
+  "dependencies": {
+    "request": "~2.21.0",
+    "cheerio": "~0.12.0"
+  }
+}
