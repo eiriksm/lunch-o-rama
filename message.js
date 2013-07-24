@@ -10,7 +10,8 @@ var MessageObj = function(text, html) {
     message: text,
     message_format: 'text',
     auth_token: config.authToken,
-    notify: 1
+    notify: 1,
+    color: 'purple'
   };
   if (html) {
     this.form.message_format = 'html';
@@ -24,6 +25,6 @@ MessageObj.prototype.post = function() {
       return;
     }
   });
-}
+};
 
 module.exports = MessageObj;

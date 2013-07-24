@@ -3,7 +3,7 @@
 var words = [
   'LUUUUUNNNJNNSSJ',
   'LOOOINSSSSJ',
-  'L¯H¯H¯H¯H¯H¯H¯H¯NSJ'
+  'LÃ˜HÃ˜HÃ˜HÃ˜HÃ˜HÃ˜HÃ˜HÃ˜NSJ'
 ];
 
 var lunchword = function() {
