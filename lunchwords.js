@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 
-var words = fs.readFileSync('lunchwords.txt', 'utf-8').split("\n");
+var words = fs.readFileSync('lunchwords.txt', 'utf-8').trim().split("\n");
 words.pop();
 
 var lunchword = function() {
