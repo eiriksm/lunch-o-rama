@@ -19,6 +19,8 @@ var MessageObj = function(text, html) {
 };
 
 MessageObj.prototype.post = function() {
+  console.log(this);
+  return;
   request.post('http://api.hipchat.com/v1/rooms/message', this, function (e, r, body) {
     if (e) {
       console.log(e);

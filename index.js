@@ -30,6 +30,10 @@ var moduleCallback = function(text, source) {
       // Meh, probably just doesnt exist.
       data = '{}';
     }
+    if (data.length === 0) {
+      // Short data, man.
+      data = '{}';
+    }
     var json = JSON.parse(data);
     if (json[id]) {
       randomModule(moduleCallback);
