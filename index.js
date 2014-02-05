@@ -22,9 +22,10 @@ var getModule = function() {
 var randomModule = getModule();
 
 var moduleCallback = function(err, text, source) {
+  // Make random module again, in case we want to try again.
+  randomModule = getModule();
   if (err) {
     // Oops. Try another random one.
-    randomModule = getModule();
     randomModule(moduleCallback);
     return;
   }
@@ -41,6 +42,7 @@ var moduleCallback = function(err, text, source) {
     }
     var json = JSON.parse(data);
     if (json[id]) {
+      // Already have this. Try again.
       randomModule(moduleCallback);
       return;
     }
