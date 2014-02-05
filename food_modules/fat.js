@@ -41,7 +41,7 @@ var doRequest = function(url, callback) {
     }
     var text = '<strong>' + item.headline + '</strong>';
     text = text + item.original;
-    callback(text, "thisiswhyyourefat.com");
+    callback(null, text, "thisiswhyyourefat.com");
   });
 };
 

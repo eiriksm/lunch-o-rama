@@ -1,6 +1,5 @@
 'use strict';
-var config = require('./config'),
-  fs = require('fs'),
+var fs = require('fs'),
   crypto = require('crypto'),
   Lunchword = require('./lunchwords'),
   Message = require('./message'),
@@ -22,7 +21,13 @@ var getModule = function() {
 
 var randomModule = getModule();
 
-var moduleCallback = function(text, source) {
+var moduleCallback = function(err, text, source) {
+  if (err) {
+    // Oops. Try another random one.
+    randomModule = getModule();
+    randomModule(moduleCallback);
+    return;
+  }
   // Create an ID to control if we have used this before.
   var id = crypto.createHash('md5').update(text).digest("hex");
   fs.readFile('data', 'utf-8', function(err, data) {
@@ -44,7 +49,7 @@ var moduleCallback = function(text, source) {
       // Let's just do it async and not anything else.
     });
     var mention = new Message(new Lunchword().word +
-      '. How about this (taken from thisiswhyyourefat.com):');
+      '. How about this (taken from ' + source + '):');
     mention.post();
     var pic = new Message(text, true);
     pic.post();
