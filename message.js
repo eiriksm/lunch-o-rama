@@ -19,6 +19,11 @@ var MessageObj = function(text, html) {
 };
 
 MessageObj.prototype.post = function() {
+  if (!this.form.auth_token) {
+    console.log('Can not send message. Was going to send:');
+    console.log(this.form.message);
+    console.log(new Error('No auth token for hipchat found.'));
+  }
   request.post('http://api.hipchat.com/v1/rooms/message', this, function (e, r, body) {
     if (e) {
       console.log(e);
