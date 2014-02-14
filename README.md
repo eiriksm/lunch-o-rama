@@ -13,4 +13,4 @@ To add your own food module, fork the repo and add a new file in the directory
 `food_modules`
 
 ## Licence
-[WTFPL](en.wikipedia.org/wiki/WTFPL)
+[WTFPL](http://en.wikipedia.org/wiki/WTFPL)
