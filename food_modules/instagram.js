@@ -21,7 +21,7 @@ function getInstagrams(callback, config) {
     complete: /* istanbul ignore next */ function(data) {
       parser.complete(data, callback);
     },
-    error: function(errorMessage, errorObject, caller) {
+    error: function(errorMessage) {
       parser.error(errorMessage, callback);
     }
   });
