@@ -35,6 +35,7 @@ module.exports = function(callback) {
   }
   catch(err) {
     // If we errored out in the try/catch... Pass that to the callback.
+    /* istanbul ignore next */
     callback(err);
   }
 };

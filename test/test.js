@@ -27,6 +27,7 @@ describe('Food modules export', function() {
     var waitForFinish = function() {
       if (i >= _.size(fmodules)) {
         done();
+        return;
       }
       setTimeout(waitForFinish, 1000);
     };
@@ -66,4 +67,58 @@ describe('Message', function() {
     post.post();
     post.error.should.equal(true);
   });
+
+  it('Should come further if we hack in some variables', function(done) {
+    // Create server just to receive this response.
+    var http = require('http');
+    http.createServer(function (req, res) {
+      var body = '';
+      req.on('data', function(d) {
+        body += d;
+      });
+      req.on('end', function() {
+        body.should.equal('room_id=&from=&message=test%20text&message_format=html&auth_token=123&notify=1&color=purple');
+        // Just write an error, so we can test that part too.
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Hello World\n');
+        done();
+      });
+    }).listen(1337, '127.0.0.1');
+    var post = new Message('test text', true);
+    post.url = 'http://localhost:1337';
+    post.form.auth_token = '123';
+    post.post();
+  });
+describe('Instagram specific', function() {
+  var i = require('../food_modules/instagram');
+  it('Should try to do something if we pass in the config', function(done) {
+    i(function(err, res) {
+      err.should.be.instanceOf(String);
+      done();
+    }, {
+      instaID: 'abc',
+      instaSecret: 'bca'
+    });
+  });
+
+  var p = require('../lib/instagram_parser');
+  it('Should return the expected value on parsing instagram data', function(done) {
+    p.complete(
+      [{
+        images: {
+          standard_resolution: {
+            url: 'test'
+          }
+        },
+        caption: {
+          text: 'test_text'
+        },
+        link: 'testlink'
+      }], function(err, data, source) {
+      data.should.equal('test_text <img src="test" />');
+      source.should.equal('testlink');
+      done();
+    });
+  })
+});
 });

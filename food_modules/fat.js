@@ -18,26 +18,31 @@ var randomUrl = function() {
 
 var UrlObj = function(url, params) {
   this.url = url;
-  this.params = params || '?maxReturned=10';
+  this.params = params || /* istanbul ignore next */ '?maxReturned=10';
 };
 
 var doRequest = function(url, callback) {
   request({url: url.url + url.params}, function(error, response, body) {
     var data = JSON.parse(body);
     // Determine if we want to use pagination.
+    /* istanbul ignore next */
     if (data.data.items.length > 0 &&
         data.data.pagination.nextPage && Math.floor(Math.random() * 2) === 1) {
       // Eh, let's do it again.
       doRequest(new UrlObj(url.url, '?' + data.data.pagination.nextPage), callback);
       return;
     }
+    /* istanbul ignore next */
     if (data.data.items.length === 0) {
       doRequest(new UrlObj(randomUrl()), callback);
+      return;
     }
     var random = Math.floor(Math.random() * data.data.items.length);
     var item = data.data.items[random];
+    /* istanbul ignore next */
     if (!item || !item.headline) {
       doRequest(new UrlObj(randomUrl()), callback);
+      return;
     }
     var text = '<strong>' + item.headline + '</strong>';
     text = text + item.original;

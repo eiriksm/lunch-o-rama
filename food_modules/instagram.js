@@ -4,18 +4,12 @@
 
 
 Instagram = require('instagram-node-lib');
-var config;
-try {
-  config = require('../config');
-}
-catch (err) {
-  config = {};
-}
+var parser = require('../lib/instagram_parser.js');
 
 var instaImage = {};
 
-function getInstagrams(callback) {
-  if (!config.instaID || !config.instaSecret) {
+function getInstagrams(callback, config) {
+  if (!config || !config.instaID || !config.instaSecret) {
     callback('Instagram credentials not provided.');
     return;
   }
@@ -24,20 +18,15 @@ function getInstagrams(callback) {
 
   Instagram.tags.recent({
     name: 'foodporn',
-    complete: function(data){
-      var pic = Math.floor(Math.random() * data.length);
-  
-      instaImage.url = data[pic].images.standard_resolution.url;
-      instaImage.text = data[pic].caption.text;
-      instaImage.source = data[pic].link;
-      callback(null, instaImage.text + ' <img src="' + instaImage.url + '" />', instaImage.source);
+    complete: /* istanbul ignore next */ function(data) {
+      parser.complete(data, callback);
     },
     error: function(errorMessage, errorObject, caller) {
-      callback(errorMessage);
+      parser.error(errorMessage, callback);
     }
   });
 }
 
-module.exports = function(callback) {
-  getInstagrams(callback);
+module.exports = function(callback, config) {
+  getInstagrams(callback, config);
 }
