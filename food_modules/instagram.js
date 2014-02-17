@@ -17,6 +17,7 @@ var instaImage = {};
 function getInstagrams(callback) {
   if (!config.instaID || !config.instaSecret) {
     callback('Instagram credentials not provided.');
+    return;
   }
   Instagram.set('client_id', config.instaID);
   Instagram.set('client_secret', config.instaSecret);
