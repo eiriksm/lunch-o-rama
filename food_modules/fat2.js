@@ -35,7 +35,8 @@ var doRequest = function(url, callback) {
     }
 
     // Compose some text to use.
-    var text = (img.attribs.alt ? /* istanbul ignore next */ img.attribs.alt : '') + '<img src="' + img.attribs.src + '" />';
+    /* istanbul ignore next */
+    var text = (img.attribs.alt ? img.attribs.alt : '') + '<img src="' + img.attribs.src + '" />';
     callback(null, text, "http://thatiswhyyourefat.tumblr.com/");
   });
 };
