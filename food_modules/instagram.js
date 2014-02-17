@@ -17,6 +17,7 @@ var instaImage = {};
 function getInstagrams(callback) {
   if (!config.instaID || !config.instaSecret) {
     callback('Instagram credentials not provided.');
+    return;
   }
   Instagram.set('client_id', config.instaID);
   Instagram.set('client_secret', config.instaSecret);
@@ -27,7 +28,7 @@ function getInstagrams(callback) {
       var pic = Math.floor(Math.random() * data.length);
   
       instaImage.url = data[pic].images.standard_resolution.url;
-      instaImage.text = data[pic].caption.text;
+      instaImage.text = (!data[pic].caption ? '#foodporn:' : data[pic].caption.text);
       instaImage.source = data[pic].link;
       callback(null, instaImage.text + ' <img src="' + instaImage.url + '" />', instaImage.source);
     },
