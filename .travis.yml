@@ -7,3 +7,4 @@ node_js:
 script:
   - make test
   - make test-cov
+  - ./node_modules/jshint/bin/jshint food_modules lib

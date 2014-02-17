@@ -29,4 +29,4 @@ function getInstagrams(callback, config) {
 
 module.exports = function(callback, config) {
   getInstagrams(callback, config);
-}
+};
