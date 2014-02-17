@@ -120,5 +120,22 @@ describe('Instagram specific', function() {
       source.should.equal('testlink');
       done();
     });
-  })
+  });
+
+  it('Should return the expected value on parsing instagram data', function(done) {
+    p.complete(
+      [{
+        images: {
+          standard_resolution: {
+            url: 'test'
+          }
+        },
+        link: 'testlink'
+      }], function(err, data, source) {
+      data.should.equal('#foodporn: <img src="test" />');
+      source.should.equal('testlink');
+      done();
+    });
+  });
+
 });
