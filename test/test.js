@@ -89,6 +89,7 @@ describe('Message', function() {
     post.form.auth_token = '123';
     post.post();
   });
+});
 describe('Instagram specific', function() {
   var i = require('../food_modules/instagram');
   it('Should try to do something if we pass in the config', function(done) {
@@ -120,5 +121,4 @@ describe('Instagram specific', function() {
       done();
     });
   })
-});
 });
