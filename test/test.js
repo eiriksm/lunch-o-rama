@@ -117,7 +117,7 @@ describe('Instagram specific', function() {
         link: 'testlink'
       }], function(err, data, source) {
       data.should.equal('test_text <img src="test" />');
-      source.should.equal('testlink');
+      source.should.equal('instagram');
       done();
     });
   });
@@ -133,7 +133,7 @@ describe('Instagram specific', function() {
         link: 'testlink'
       }], function(err, data, source) {
       data.should.equal('#foodporn: <img src="test" />');
-      source.should.equal('testlink');
+      source.should.equal('instagram');
       done();
     });
   });
