@@ -12,5 +12,7 @@ A stupid script to post stupid messages to hipchat.
 To add your own food module, fork the repo and add a new file in the directory
 `food_modules`
 
+Please also be sure to run the tests, and fix any issues you introduce. Tests are run with `make test`.
+
 ## Licence
 [WTFPL](http://en.wikipedia.org/wiki/WTFPL)
