@@ -1,5 +1,6 @@
 test:
 	@NODE_ENV=test node ./node_modules/mocha/bin/_mocha --reporter list
+	./node_modules/jshint/bin/jshint index.js food_modules lib
 
 test-cov:
 	@NODE_ENV=test node ./node_modules/istanbul/lib/cli.js \
