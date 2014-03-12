@@ -1,4 +1,5 @@
 # Lunch-o-rama
+[![Dependency Status](https://david-dm.org/eiriksm/lunch-o-rama.png)](https://david-dm.org/eiriksm/lunch-o-rama)
 [![Build Status](https://secure.travis-ci.org/eiriksm/lunch-o-rama.png)](http://travis-ci.org/eiriksm/lunch-o-rama)
 [![Code Climate](https://codeclimate.com/github/eiriksm/lunch-o-rama.png)](https://codeclimate.com/github/eiriksm/lunch-o-rama)
 
