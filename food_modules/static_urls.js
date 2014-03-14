@@ -23,6 +23,11 @@ var images = [
     url: 'http://i.imgur.com/ce3gDhC.jpg?1',
     source: 'imgur.com',
     text: 'Nuff said'
+  },
+  {
+    url: 'http://bp.uuuploads.com/vintage-ads-that-would-be-banned-today/vintage-ads-that-would-be-banned-today-15.jpg',
+    source: 'http://news-hound.org/23-vintage-ads-that-would-be-banned-today/',
+    text: 'Cochon Prodigue
   }
 ];
 
