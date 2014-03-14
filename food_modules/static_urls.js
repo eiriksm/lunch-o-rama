@@ -27,7 +27,7 @@ var images = [
   {
     url: 'http://bp.uuuploads.com/vintage-ads-that-would-be-banned-today/vintage-ads-that-would-be-banned-today-15.jpg',
     source: 'http://news-hound.org/23-vintage-ads-that-would-be-banned-today/',
-    text: 'Cochon Prodigue
+    text: 'Cochon Prodigue'
   }
 ];
 
