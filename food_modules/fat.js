@@ -23,7 +23,14 @@ var UrlObj = function(url, params) {
 
 var doRequest = function(url, callback) {
   request({url: url.url + url.params}, function(error, response, body) {
-    var data = JSON.parse(body);
+    var data;
+    try {
+      data = JSON.parse(body);
+    }
+    catch (err) {
+      callback(err);
+      return;
+    }
     // Determine if we want to use pagination.
     /* istanbul ignore next */
     if (data.data.items.length > 0 &&
