@@ -11,7 +11,7 @@
   "license": "BSD",
   "dependencies": {
     "request": "~2.34.0",
-    "cheerio": "~0.13.1",
+    "cheerio": "^0.13.1",
     "instagram-node-lib": "~0.1.1"
   },
   "devDependencies": {
