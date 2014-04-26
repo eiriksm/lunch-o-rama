@@ -8,7 +8,6 @@ var Message = require('../lib/message');
 var _ = require('underscore');
 
 describe('Food modules export', function() {
-  'use strict';
   it('Should export a function for each food module', function(done) {
     for (var mod in fmodules) {
       fmodules[mod].should.be.an.instanceOf(Function);
