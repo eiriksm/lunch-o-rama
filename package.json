@@ -10,14 +10,14 @@
   "author": "eirik@nymedia.no",
   "license": "BSD",
   "dependencies": {
-    "cheerio": "^0.15.0",
+    "cheerio": "^0.16.0",
     "instagram-node-lib": "~0.1.1",
-    "request": "~2.34.0"
+    "request": "~2.35.0"
   },
   "devDependencies": {
-    "istanbul": "~0.2.7",
-    "jshint": "^2.5.0",
-    "mocha": "^1.18.2",
+    "istanbul": "~0.2.10",
+    "jshint": "^2.5.1",
+    "mocha": "^1.19.0",
     "should": "^3.3.1",
     "underscore": "~1.6.0"
   }
