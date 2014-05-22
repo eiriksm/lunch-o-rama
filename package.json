@@ -12,7 +12,7 @@
   "dependencies": {
     "cheerio": "^0.16.0",
     "instagram-node-lib": "~0.1.1",
-    "request": "~2.35.0"
+    "request": "~2.36.0"
   },
   "devDependencies": {
     "istanbul": "~0.2.10",
