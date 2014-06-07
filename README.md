@@ -1,5 +1,6 @@
 # Lunch-o-rama
 [![Dependency Status](https://david-dm.org/eiriksm/lunch-o-rama.svg?theme=shields.io)](https://david-dm.org/eiriksm/lunch-o-rama)
+[![Coverage Status](http://img.shields.io/coveralls/eiriksm/lunch-o-rama.svg)](https://coveralls.io/r/eiriksm/lunch-o-rama?branch=master)
 [![Build Status](https://secure.travis-ci.org/eiriksm/lunch-o-rama.svg)](http://travis-ci.org/eiriksm/lunch-o-rama)
 [![Code Climate](http://img.shields.io/codeclimate/github/eiriksm/lunch-o-rama.svg)](https://codeclimate.com/github/eiriksm/lunch-o-rama)
 

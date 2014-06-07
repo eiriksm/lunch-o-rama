@@ -93,7 +93,7 @@ describe('Instagram specific', function() {
   var i = require('../food_modules/instagram');
   it('Should try to do something if we pass in the config', function(done) {
     i(function(err, res) {
-      err.should.be.instanceOf(String);
+      err.should.not.equal(null);
       done();
     }, {
       instaID: 'abc',
