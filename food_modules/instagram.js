@@ -17,7 +17,7 @@ function getInstagrams(callback, config) {
   Instagram.set('client_secret', config.instaSecret);
 
   Instagram.tags.recent({
-    name: 'foodporn',
+    name: 'meltedcheese',
     complete: /* istanbul ignore next */ function(data) {
       parser.complete(data, callback);
     },
