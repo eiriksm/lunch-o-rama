@@ -15,14 +15,14 @@
   "dependencies": {
     "cheerio": "^0.17.0",
     "instagram-node-lib": "~0.1.1",
-    "request": "~2.37.0"
+    "request": "~2.45.0"
   },
   "devDependencies": {
-    "coveralls": "^2.11.1",
-    "istanbul": "~0.3.0",
-    "jshint": "^2.5.2",
-    "mocha": "^1.20.1",
-    "should": "^4.0.4",
-    "underscore": "~1.6.0"
+    "coveralls": "^2.11.2",
+    "istanbul": "~0.3.2",
+    "jshint": "^2.5.6",
+    "mocha": "^1.21.5",
+    "should": "^4.1.0",
+    "underscore": "~1.7.0"
   }
 }

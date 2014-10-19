@@ -76,7 +76,7 @@ describe('Message', function() {
         body += d;
       });
       req.on('end', function() {
-        body.should.equal('room_id=&from=&message=test%20text&message_format=html&auth_token=123&notify=1&color=purple');
+        body.should.equal('message=test%20text&message_format=html&auth_token=123&notify=1&color=purple');
         // Just write an error, so we can test that part too.
         res.writeHead(200, {'Content-Type': 'text/plain'});
         res.end('Hello World\n');
