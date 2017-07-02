@@ -13,7 +13,7 @@
   "author": "eirik@nymedia.no",
   "license": "BSD",
   "dependencies": {
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.0.0-rc.2",
     "instagram-node-lib": "~0.1.1",
     "request": "~2.81.0"
   },
